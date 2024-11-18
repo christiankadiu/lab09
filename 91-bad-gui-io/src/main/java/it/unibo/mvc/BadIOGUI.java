@@ -5,11 +5,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +16,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 
@@ -44,17 +43,25 @@ public class BadIOGUI {
     public BadIOGUI() {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
-        JPanel newPanel = new JPanel();
-        newPanel.setLayout(new BoxLayout(newPanel, 0));
+        final JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BoxLayout(newPanel, BoxLayout.X_AXIS));
         final JButton write = new JButton("Write on file");
         canvas.add(newPanel, BorderLayout.CENTER);
-        newPanel.add(write, BorderLayout.CENTER);
-        JButton read = new JButton("read");
+        newPanel.add(write);
+        final JButton read = new JButton("read");
         newPanel.add(read);
         read.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(final ActionEvent e){
-                System.out.println("pippo");
+            public void actionPerformed(final ActionEvent e) {
+                try {
+                    final List<String> lista = Files.readAllLines(Paths.get(PATH), StandardCharsets.UTF_8);
+                    for (final String object : lista) {
+                        System.out.println(object); // NOPMD: allowed as this is just an exercise
+                    }
+                } catch (IOException e1) {
+                    JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
+                    e1.printStackTrace(); // NOPMD: allowed as this is just an exercise
+                }
             }
         });
         frame.setContentPane(canvas);
