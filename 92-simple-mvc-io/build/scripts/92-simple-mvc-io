@@ -213,7 +213,7 @@ DEFAULT_JVM_OPTS=""
 
 set -- \
         -classpath "$CLASSPATH" \
-        it.unibo.mvc.SimpleGUI \
+        it.unibo.mvc.SimpleGUIWithFileChooser \
         "$@"
 
 # Stop when "xargs" is not available.

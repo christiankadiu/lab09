@@ -74,7 +74,7 @@ set CLASSPATH=%APP_HOME%\lib\92-simple-mvc-io.jar
 
 
 @rem Execute 92-simple-mvc-io
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %92_SIMPLE_MVC_IO_OPTS%  -classpath "%CLASSPATH%" it.unibo.mvc.SimpleGUI %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %92_SIMPLE_MVC_IO_OPTS%  -classpath "%CLASSPATH%" it.unibo.mvc.SimpleGUIWithFileChooser %*
 
 :end
 @rem End local scope for the variables with windows NT shell
