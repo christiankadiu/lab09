@@ -21,34 +21,40 @@ public final class SimpleGUI {
     private static final int PROPORTION = 5;
     private final JFrame frame = new JFrame();
 
+    /**
+     * costructor.
+     * @param cont
+     */
+
     public SimpleGUI(final SimpleController cont) {
-        JPanel canvas = new JPanel();
+        final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
-        JTextField textField = new JTextField("TextField");
-        JTextArea textArea = new JTextArea();
+        final JTextField textField = new JTextField("TextField");
+        final JTextArea textArea = new JTextArea();
         canvas.add(textField, BorderLayout.NORTH);
         canvas.add(textArea, BorderLayout.CENTER);
-        JButton print = new JButton("print");
-        JButton show = new JButton("show history");
-        JPanel newPanel = new JPanel();
+        final JButton print = new JButton("print");
+        final JButton show = new JButton("show history");
+        final JPanel newPanel = new JPanel();
         newPanel.setLayout(new FlowLayout(1));
         canvas.add(newPanel, BorderLayout.SOUTH);
         newPanel.add(print);
         newPanel.add(show);
 
-        /* handlers */
+
         print.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(textField.getText());
+                cont.setNextString(textField.getText());
+                cont.printCurrentString();
             }
         });
 
         show.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                for (String string : cont.getHistory()) {
-                    textArea.setText(string);
+                for (final String string : cont.getHistory()) {
+                    textArea.append(string + "\n");
                 }
             }
         });
@@ -84,9 +90,12 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
 
+    /**
+     * main.
+     * @param args
+     */
     public static void main(final String... args) {
         new SimpleGUI(new SimpleController()).display();
-
     }
 
 }

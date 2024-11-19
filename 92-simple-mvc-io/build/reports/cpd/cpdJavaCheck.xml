@@ -2,7 +2,7 @@
 <pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          pmdVersion="7.7.0"
-         timestamp="2024-11-19T14:52:12.2064016+01:00"
+         timestamp="2024-11-19T16:30:52.2174557+01:00"
          version="1.0.0"
          xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
    <file path="C:\Users\christian.kadiu\labb9\92-simple-mvc-io\src\main\java\it\unibo\mvc\Controller.java"
@@ -10,5 +10,5 @@
    <file path="C:\Users\christian.kadiu\labb9\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java"
          totalNumberOfTokens="229"/>
    <file path="C:\Users\christian.kadiu\labb9\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUIWithFileChooser.java"
-         totalNumberOfTokens="393"/>
+         totalNumberOfTokens="398"/>
 </pmd-cpd>

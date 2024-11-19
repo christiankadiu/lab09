@@ -10,16 +10,15 @@ import java.util.Objects;
  */
 public final class SimpleController implements Controller {
 
-    private List<String> lista;
-    private String currentString;
+    private final List<String> lista;
     private String next;
 
     SimpleController() {
-        lista = new LinkedList<String>();
+        lista = new LinkedList<>();
     }
 
     @Override
-    public void setNextString(String s) {
+    public void setNextString(final String s) {
         Objects.requireNonNull(s);
         next = s;
         lista.add(s);
@@ -32,16 +31,15 @@ public final class SimpleController implements Controller {
 
     @Override
     public List<String> getHistory() {
-        return lista;
+        return new LinkedList<>(lista);
     }
 
     @Override
     public void printCurrentString() {
-        try {
-            System.out.println(currentString);
-        } catch (IllegalStateException e) {
-            e.getMessage().isBlank();
+        if (next == null || next.isBlank()) {
+            throw new IllegalStateException();
         }
+        System.out.println(next); // NOPMD it is okay to use the console
     }
 
 }

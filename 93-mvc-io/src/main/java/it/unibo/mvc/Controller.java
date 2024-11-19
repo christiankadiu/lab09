@@ -14,7 +14,7 @@ public interface Controller {
      * @throws nullpointerexeption if the string is null
      */
 
-    public void setNextString(String s);
+    void setNextString(String s);
 
     /**
      * returns the next string to print.
@@ -22,7 +22,7 @@ public interface Controller {
      * @return String
      */
 
-    public String getNexString();
+    String getNexString();
 
     /**
      * gets the history of strings printed.
@@ -30,7 +30,7 @@ public interface Controller {
      * @return List
      */
 
-    public List<String> getHistory();
+    List<String> getHistory();
 
     /**
      * prints the current string.
@@ -38,6 +38,6 @@ public interface Controller {
      * @throws IllegalStateException if the string is unset
      */
 
-    public void printCurrentString();
+    void printCurrentString();
 
 }

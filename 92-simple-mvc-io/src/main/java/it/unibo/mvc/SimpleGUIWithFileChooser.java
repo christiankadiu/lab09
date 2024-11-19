@@ -2,6 +2,7 @@ package it.unibo.mvc;
 
 import java.awt.BorderLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -14,7 +15,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.FlowLayout;
+
 
 /**
  * A very simple program using a graphical interface.
@@ -39,7 +40,7 @@ public final class SimpleGUIWithFileChooser {
             }
         });
         final JPanel secondPanel = new JPanel();
-        secondPanel.setLayout(new FlowLayout());
+        secondPanel.setLayout(new BoxLayout(secondPanel, BoxLayout.X_AXIS));
         final JTextField textField = new JTextField(cont.getPath());
         final JButton browseButton = new JButton("Browse");
         browseButton.addActionListener(new ActionListener() {
