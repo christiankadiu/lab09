@@ -2,13 +2,13 @@ package it.unibo.mvc;
 
 import java.awt.BorderLayout;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.BoxLayout;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -41,6 +41,20 @@ public final class SimpleGUIWithFileChooser {
         secondPanel.setLayout(new BorderLayout());
         final JTextField textField = new JTextField(cont.getPath());
         final JButton browseButton = new JButton("Browse");
+        browseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                final JFileChooser chooser = new JFileChooser();
+                chooser.setSelectedFile(cont.getCurrentFile());
+                final int res = chooser.showSaveDialog(frame);
+                if (res == JFileChooser.APPROVE_OPTION) {
+                    cont.setCurrentFile(chooser.getSelectedFile());
+                    textField.setText(chooser.getSelectedFile().getPath());
+                } else if (res != JFileChooser.CANCEL_OPTION) {
+                    JOptionPane.showMessageDialog(chooser, "error");
+                }
+            }
+        });
         secondPanel.add(textField, BorderLayout.NORTH);
         secondPanel.add(browseButton, BorderLayout.EAST);
         canvas.add(secondPanel, BorderLayout.NORTH);

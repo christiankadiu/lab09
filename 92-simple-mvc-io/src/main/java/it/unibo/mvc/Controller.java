@@ -58,4 +58,14 @@ public class Controller {
         }
     }
 
+    /**
+     * returns the current file.
+     * 
+     * @return current file
+     */
+
+    public File getCurrentFile() {
+        return currentFile;
+    }
+
 }
