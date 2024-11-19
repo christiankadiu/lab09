@@ -1,0 +1,10 @@
+-Xwerror '-quiet'
+-classpath '/Users/christian/lab9/92-simple-mvc-io/build/classes/java/main:/Users/christian/lab9/92-simple-mvc-io/build/resources/main'
+-d '/Users/christian/lab9/92-simple-mvc-io/build/docs/javadoc'
+-doctitle '92-simple-mvc-io API'
+-notimestamp 
+-quiet 
+-windowtitle '92-simple-mvc-io API'
+'/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/Controller.java'
+'/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/SimpleGUI.java'
+'/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/SimpleGUIWithFileChooser.java'

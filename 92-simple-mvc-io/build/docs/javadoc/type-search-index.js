@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"it.unibo.mvc","l":"Controller"},{"p":"it.unibo.mvc","l":"SimpleGUI"},{"p":"it.unibo.mvc","l":"SimpleGUIWithFileChooser"}];updateSearchResults();

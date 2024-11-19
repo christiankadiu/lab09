@@ -2,12 +2,10 @@ package it.unibo.mvc;
 
 import java.awt.BorderLayout;
 
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -25,6 +23,7 @@ public final class SimpleGUI {
 
     SimpleGUI() {
         final JPanel canvas = new JPanel();
+        final Controller cont = new Controller();
         canvas.setLayout(new BorderLayout());
         final JTextArea textArea = new JTextArea();
         canvas.add(textArea, BorderLayout.CENTER);
@@ -33,7 +32,7 @@ public final class SimpleGUI {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                
+                cont.writeFile(textArea.getText());
             }
         });
         frame.setContentPane(canvas);
@@ -66,8 +65,14 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
 
+    /**
+     * main.
+     * 
+     * @param args
+     */
+
     public static void main(final String... args) {
         new SimpleGUI().display();
-     }
+    }
 
 }

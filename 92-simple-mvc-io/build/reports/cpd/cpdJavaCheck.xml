@@ -2,13 +2,13 @@
 <pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          pmdVersion="7.7.0"
-         timestamp="2024-11-18T12:32:24.8644892+01:00"
+         timestamp="2024-11-18T16:48:18.165051-08:00"
          version="1.0.0"
          xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
-   <file path="C:\Users\christian.kadiu\lab9\92-simple-mvc-io\src\main\java\it\unibo\mvc\Controller.java"
-         totalNumberOfTokens="117"/>
-   <file path="C:\Users\christian.kadiu\lab9\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java"
-         totalNumberOfTokens="207"/>
-   <file path="C:\Users\christian.kadiu\lab9\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUIWithFileChooser.java"
+   <file path="/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/Controller.java"
+         totalNumberOfTokens="118"/>
+   <file path="/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/SimpleGUI.java"
+         totalNumberOfTokens="229"/>
+   <file path="/Users/christian/lab9/92-simple-mvc-io/src/main/java/it/unibo/mvc/SimpleGUIWithFileChooser.java"
          totalNumberOfTokens="15"/>
 </pmd-cpd>
